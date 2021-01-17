@@ -18,6 +18,7 @@
             <h5 style="font-weight: normal;">{{fimg[0].caption}}</h5>
             <a href="{{ url_for('user_profile', user_name=fimg[0].username) }}" class="lbl">@{{fimg[0].username}}</a>
             <p class="lbl"> Date: {{fimg[0].date}}</p>
+            <a class="btn btn-success" href="{{fimg[0].imgurl}}">Download</a>
             <div class="tag_list">
                 <p style="color: bisque;">Tags 🏷:</p>
                 {% for tag in fimg[1] %}
