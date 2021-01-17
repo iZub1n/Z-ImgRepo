@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='styles/basicstylesheet.css') }}">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body style="background-color:rgb(21, 0, 46);">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 20px;">
+                <a class="navbar-brand">Z-IMGRepo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <form action="{{ url_for('login') }}" class="form-signin" method="get">
+                                <button class="btn btn-light btn-lg">Home 🏡</button>
+                            </form>
+                        </li>
+
+                        <li class="nav-item"> 
+                            <form action="{{ url_for('user_feed') }}" class="form-signin" method="get">
+                                <button class="btn btn-light btn-lg">Feed 📩</button>
+                            </form>
+                        </li>
+
+                        <li class="nav-item"> 
+                            <form action="{{ url_for('discover') }}" class="form-signin" method="get">
+                                <button class="btn btn-light btn-lg">Discover 🌎</button>
+                            </form>
+                        </li>
+    
+                        <li class="nav-item"> 
+                            <form action="{{ url_for('user_profile', user_name=session['user']) }}" class="form-signin" method="get">
+                                <button class="btn btn-light btn-lg">{{session['user']}} ⭐️</button>
+                            </form>
+                        </li>
+    
+                        <li class="nav-item">
+                            <form action="{{ url_for('logout') }}" class="form-signin" method="post">
+                                <button class="btn btn-light btn-lg">Sign Out 👋</button>
+                            </form>
+                        </li>
+                    </ul>
+                    <form class="form-inline nav navbar-nav ml-auto" action="{{ url_for('search') }}" method="POST">
+                        <input type="checkbox" class="form-check-input" id="exact_search" name="exact_search">
+                        <label style="color: black; padding-right: 10px;" class="form-check-label" for="exact_search">Exact Search</label>
+                        <input required class="form-control mr-sm-2" type="search" id="query" name="query" placeholder="Search by Tag or Username" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
+                      </form>
+                </div>
+              </nav>
+
+
+
+              
+
+        </header>
+        {% block content %}
+        {% endblock %}
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

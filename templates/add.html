@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Z-IMGRepo - Upload
+{% endblock %}
+{% block body %}
+<script>
+    function char_limit(x) {
+	 if(document.getElementById(x).value.length > 0 && document.getElementById(x).value.length <= 255) { 
+            document.getElementById('upload').disabled = false; 
+        } 
+        else { 
+            document.getElementById('upload').disabled = true;
+        }
+    }
+
+    document.addEventListener("keyup", function(){
+        char_limit("tags");
+        char_limit("caption");
+    });
+
+    </script>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-12" style="text-align:center; padding-top: 35px; padding-bottom: 15px;">
+            <h1>Upload Image 📸 🌌</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <p class='bg-success' style="padding: 20px;">
+                        {% for message in messages %}
+                            {{ message }} <br>
+                        {% endfor %}
+                    </p>
+                {% endif %}
+            {% endwith%}
+    </div>
+   </div> 
+   <div class="row">
+    <div class="col-12" style="text-align:center;">
+        <form action="{{ url_for('add_file') }}" name='upload' class="form-signin" method="POST" style="padding: 50px" enctype=multipart/form-data>
+            <label for="caption">Caption:</label><br>
+            <input type="text" class="form-control" id="caption" name="caption" placeholder="Enter a Caption (255 character max)"><br>
+            <label for="lname">Tags ( Enter Tags Seperated by Commas ' , ' ):</label><br>
+            <input type="text" class="form-control" id="tags" name="tags" placeholder="Enter a Caption (255 character max)"><br><br>
+            <label for="myfile">Select Image:</label>
+            <input type="file" name="file" id="myfile" name="myfile" accept=".png, .jpg, .jpeg" multiple><br><br>
+            <button disabled type="submit" class="btn btn-primary" name="action" id="upload" value="upload">Upload</button>
+        </form>
+
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

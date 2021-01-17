@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Z-IMGRepo - {{user}}
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+<div class="row">
+    <div class="col-12" style="text-align:center; padding-top: 35px; padding-bottom: 15px;">
+            <h1>{{pagetype}} - {{user}} </h1>
+    </div>
+   </div> 
+    <div class="row">
+        <ul>
+        {% for result in results %}
+        <li>
+            <a href="{{ url_for('user_profile', user_name=result) }}">
+                        {{ result }}
+            </a>
+        </li>
+        {% else %}
+        No {{pagetype}}
+        {% endfor %}
+        
+    </ul>   
+</div> 
+</div>
+
+
+
+
+
+{% endblock %}

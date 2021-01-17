@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Z-IMGRepo - {{user[1]}}
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+<div class="row">
+    <div class="col-12" style="text-align:center; padding-top: 35px; padding-bottom: 15px;">
+            <h1>{{user[1]}} </h1>
+    </div>
+   </div> 
+   <div class="row">
+    <div class="col-12" style="text-align:center;">
+        <form action="{{ url_for('relationship_update', user_name=user[1]) }}" class="form-signin" method="get" style="padding: 50px">
+            <button class="btn btn-info">{{ru_txt}}</button>
+        </form>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-3" style="text-align:center;">
+            <form action="{{ url_for('user_feed') }}" class="form-signin" method="get">
+                <button class="btn btn-warning">Posts</button>
+            </form>
+        </div>
+        <div class="col-3" style="text-align:center;">
+            <form action="{{ url_for('user_followers', user_name=user[1] )}}" class="form-signin" method="get">
+                <button class="btn btn-warning">Followers</button>
+            </form>
+        </div>
+        <div class="col-3" style="text-align:center;">
+            <form action="{{ url_for('user_following', user_name=user[1] )}}" class="form-signin" method="get">
+                <button class="btn btn-warning">Following</button>
+            </form>
+        </div>
+        {% if user[1]==session['user'] %}
+        <div class="col-3" style="text-align:center;">
+            <form action="{{ url_for('add_file') }}" class="form-signin" method="get">
+                <button class="btn btn-success">Add +</button>
+            </form>
+        </div>
+        {% endif %}
+</div>
+<div class="row">
+    <div class="col-12" style="text-align:center;">
+        <div class='bg-text'>
+                <h3>Feautured Picture</h3>
+                {% if fimg[0] %}
+                <img class='display-img' src="{{fimg[0].imgurl}}"/>
+                <h5 style="font-weight: normal;">{{fimg[0].caption}}</h5>
+                <a href="{{ url_for('user_profile', user_name=fimg[0].username) }}" class="lbl">@{{fimg[0].username}}</a>
+                <p class="lbl"> Date: {{fimg[0].date}}</p>
+                <div class="tag_list">
+                    <p style="color: bisque;">Tags 🏷:</p>
+                    {% for tag in fimg[1] %}
+                    <a href="{{ url_for('search', query=tag) }}" style="color: bisque; font-weight: lighter;"><u>{{tag}}</u></a>
+                </div>
+                {% endfor %}
+                {% else %}
+                    <h5>User Has No Uploads</h5>
+                {% endif %}
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

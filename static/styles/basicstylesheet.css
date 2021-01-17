@@ -1,0 +1,39 @@
+*{
+    color: aliceblue;
+}
+
+.bg-text {
+    color: wheat;
+    background-color: rgb(111, 233, 196);
+    background-color: rgba(20, 152, 175, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+
+
+    z-index: 2;
+    padding: 20px;
+    margin: 30px;
+    text-align: center;
+    border-radius: 25px;
+    text-align: center;
+    
+}
+
+.display-img{
+    border-radius: 25px; max-width: 80%; margin-bottom: 30px; margin-top: 30px;
+}
+
+.lbl{
+    font-weight: lighter; 
+    color: rgb(134, 134, 134);
+}
+
+.tag_list{
+    background-color: rgba(0, 52, 61, 0.4);
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+    border-radius: 25px;
+    border-color: bisque;
+}
