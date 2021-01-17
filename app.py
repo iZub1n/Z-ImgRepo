@@ -367,7 +367,5 @@ def search():
      
     return render_template("search.html", query=query, search_results=search_results)
 
-
-
 if __name__ == "__main__":
     app.run
