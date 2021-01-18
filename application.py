@@ -348,8 +348,9 @@ def search():
 
     if request.form.get("exact_search"):
         query_sql = "%," + query + ",%"
+        query_uname = query.upper()
         query_sql = query_sql.upper()
-        img_lis =  db.execute("SELECT * FROM Images WHERE upper(username) LIKE :username OR upper(tags) LIKE (:query)", {"username": query_sql, "query": query_sql}).fetchall()
+        img_lis =  db.execute("SELECT * FROM Images WHERE upper(username) = :username OR upper(tags) LIKE (:query)", {"username": query_uname, "query": query_sql}).fetchall()
     
     img_tags_lis =[]
     search_results = []
