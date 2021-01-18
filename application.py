@@ -13,7 +13,6 @@ from botocore.client import Config
 import pytz
 from datetime import datetime
 
-from flask_paginate import Pagination, get_page_args
 
 UPLOAD_FOLDER = 'media/repos/images'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
