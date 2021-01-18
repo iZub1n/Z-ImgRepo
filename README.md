@@ -1,4 +1,6 @@
+# Shopify 2021 - Shopify Developer Intern Challenge
 # Z-ImgRepo
+
 An Image Repository. Implemented using Python (Flask), PSQL, JavaScript, HTML and Amazon S3
 
 This is an Image Repository which allows users to create accounts and upload pictures. It also users to view other's upload. Lastly, users can search images based on tags and uploaders. Searching similar images is also supposrted
