@@ -1,4 +1,4 @@
-# Shopify 2021 - Shopify Developer Intern Challenge
+
 # Z-ImgRepo
 
 An Image Repository. Implemented using Python (Flask), PSQL, JavaScript, HTML and Amazon S3
