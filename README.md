@@ -13,13 +13,13 @@ If choosing the latter:
 1. Clone the git repository on to your machine
 2. Open the directory
 3. Use the terminal to access this directory
-4. Run python3 -m venv venv
-5. Run source venv/bin/activate
-6. Run pip install -r requirements.txt. Wait for it to install, this may take some time
-7. Run export FLASK_APP=application.py
-8. Run export DATABASE_URL=postgres://otnuugehoevpcc:4e30c302650373c04e027740d350352f85bf0195ab8447587def58d67ba693a0@ec2-3-216-89-250.compute-1.amazonaws.com:5432/d3g7n801clnsub
+4. Run: python3 -m venv venv
+5. Run: source venv/bin/activate
+6. Run: pip install -r requirements.txt. Wait for it to install, this may take some time
+7. Run: export FLASK_APP=application.py
+8. Run: export DATABASE_URL=postgres://otnuugehoevpcc:4e30c302650373c04e027740d350352f85bf0195ab8447587def58d67ba693a0@ec2-3-216-89-250.compute-1.amazonaws.com:5432/d3g7n801clnsub
 NOTE: This method doesn't support uploading files as files are uploaded to Amazon AWS S3. This method requires the perosn running the app locally to have access to my credentials which I deem unsafe.
-9. Run flask run. The website should now be live locally at http://127.0.0.1:5000/
+9. Run: flask run. The website should now be live locally at http://127.0.0.1:5000/
 
 ### User Login
 1. The user is directed to a login page where they can use a preexisting account or create a new one
@@ -51,3 +51,16 @@ Images can either be searched using the search bar or through other similar imag
 1. Each Image has tags
 2. Clicking on a specific tag will show other images on the repository sharing the same or similar tags
 3. The user can also use the name of the uploader in the searchbar to find more images by that specific person
+
+#### Screenshots
+
+![Screen Shot 2022-01-09 at 6 17 18 PM](https://user-images.githubusercontent.com/60079441/148705283-a22ea1b1-ed13-44e5-b887-7f12de9886fb.png)
+
+![Screen Shot 2022-01-09 at 6 17 28 PM](https://user-images.githubusercontent.com/60079441/148705299-bbe73d2a-2cf3-427a-a8c3-8bf489058d9c.png)
+
+![Screen Shot 2022-01-09 at 6 17 53 PM](https://user-images.githubusercontent.com/60079441/148705305-9b62dbee-4f04-490a-911a-630c705347cc.png)
+
+![Screen Shot 2022-01-09 at 6 18 17 PM](https://user-images.githubusercontent.com/60079441/148705314-15b29780-9f99-479b-b4ed-1b277f0ebfba.png)
+
+![Screen Shot 2022-01-09 at 6 18 27 PM](https://user-images.githubusercontent.com/60079441/148705317-1a897740-2e8d-4f93-97d7-e9b7f2433eb1.png)
+
