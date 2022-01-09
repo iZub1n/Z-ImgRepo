@@ -1,6 +1,8 @@
 
 # Z-ImgRepo
 
+Live Demo: https://z-imgrepo.herokuapp.com/
+
 Shopify Developer Intern Challenge: https://docs.google.com/document/d/1eg3sJTOwtyFhDopKedRD6142CFkDfWp1QvRKXNTPIOc/edit
 
 An Image Repository. Implemented using Python (Flask), PSQL, JavaScript, HTML and Amazon S3
