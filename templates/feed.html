@@ -15,7 +15,9 @@
     {% for fimg in feed %}
     <div class="col-12 col-lg-4 col-md-6" style="text-align:center;">
         <div class='bg-text'>
-            <img class='display-img' src="{{fimg[0].imgurl}}"/>
+            <div class='display-box'>
+                <img class='display-img' src="{{fimg[0].imgurl}}"/>
+            </div>
             <h5 style="font-weight: normal;">{{fimg[0].caption}}</h5>
             <a href="{{ url_for('user_profile', user_name=fimg[0].username) }}" class="lbl">@{{fimg[0].username}}</a>
             <p class="lbl"> Date: {{fimg[0].date}}</p>
