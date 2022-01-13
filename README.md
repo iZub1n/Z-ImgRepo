@@ -17,13 +17,13 @@ If choosing the latter:
 1. Clone the git repository on to your machine
 2. Open the directory
 3. Use the terminal to access this directory
-4. Run: python3 -m venv venv
-5. Run: source venv/bin/activate
-6. Run: pip install -r requirements.txt. Wait for it to install, this may take some time
-7. Run: export FLASK_APP=application.py
-8. Run: export DATABASE_URL=postgres://otnuugehoevpcc:4e30c302650373c04e027740d350352f85bf0195ab8447587def58d67ba693a0@ec2-3-216-89-250.compute-1.amazonaws.com:5432/d3g7n801clnsub
+4. Run: `python3 -m venv venv`
+5. Run: `source venv/bin/activate`
+6. Run: `pip install -r requirements.txt` Wait for it to install, this may take some time
+7. Run: `export FLASK_APP=application.py`
+8. Run: `export DATABASE_URL=postgres://otnuugehoevpcc:4e30c302650373c04e027740d350352f85bf0195ab8447587def58d67ba693a0@ec2-3-216-89-250.compute-1.amazonaws.com:5432/d3g7n801clnsub`
 NOTE: This method doesn't support uploading files as files are uploaded to Amazon AWS S3. This method requires the perosn running the app locally to have access to my credentials which I deem unsafe.
-9. Run: flask run. The website should now be live locally at http://127.0.0.1:5000/
+9. Run: `flask run` . The website should now be live locally at http://127.0.0.1:5000/
 
 ### User Login
 1. The user is directed to a login page where they can use a preexisting account or create a new one
